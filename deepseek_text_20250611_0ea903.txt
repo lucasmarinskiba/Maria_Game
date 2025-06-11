@@ -1,0 +1,32 @@
+maria_game/
+├── bin/                  # Ejecutables
+├── build/                # Archivos de compilación
+├── docs/                 # Documentación
+├── assets/               # Recursos multimedia
+│   ├── textures/
+│   ├── models/
+│   ├── sounds/
+│   ├── fonts/
+│   └── shaders/
+├── src/                  # Código fuente
+│   ├── core/             # Sistemas principales
+│   │   ├── Game.cpp
+│   │   ├── Game.h
+│   │   ├── Player.cpp
+│   │   ├── Player.h
+│   │   ├── NPC.cpp
+│   │   ├── NPC.h
+│   │   ├── MiracleSystem.cpp
+│   │   └── MiracleSystem.h
+│   ├── levels/           # Implementación de niveles
+│   │   ├── FatimaLevel.cpp
+│   │   ├── FatimaLevel.h
+│   │   ├── GuadalupeLevel.cpp
+│   │   └── ...
+│   ├── utils/            # Utilidades
+│   │   ├── ResourceManager.cpp
+│   │   ├── MathHelper.h
+│   │   └── ...
+│   └── main.cpp          # Punto de entrada
+├── CMakeLists.txt        # Configuración de compilación
+└── README.md
