@@ -247,3 +247,7 @@ float distance = MathHelper::Distance(playerPos, enemyPos);
 if (IsKeyPressed(KEY_SPACE)) {
     combatSystem.PlayerAttack(player.position, 2.0f, 30.0f);
 }
+
+messageSys.AddMessage("¡Pulsa E para interactuar!", {screenWidth/2-80, screenHeight-100});
+messageSys.Update(GetFrameTime());
+messageSys.Draw();
