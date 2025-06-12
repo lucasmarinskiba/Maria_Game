@@ -87,7 +87,8 @@ int main() {
                 DrawModel(maria, playerPosition, 1.0f, WHITE);
                 DrawGrid(20, 1.0f); // Suelo
             EndMode3D();
-            
+
+            DrawHUD(player.health, player.maxHealth, player.faith, player.maxFaith);
             // UI: Puntos de Fe
             DrawText(TextFormat("Fe: %i", faithPoints), 20, 20, 30, GOLD);
         EndDrawing();
