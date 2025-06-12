@@ -253,3 +253,11 @@ messageSys.Update(GetFrameTime());
 messageSys.Draw();
 
 ApplyGravity(player.position, player.verticalSpeed);
+
+int idx = interactionSys.FindNearby(player.position);
+interactionSys.DrawPrompt(idx, screenWidth, screenHeight);
+if (idx >= 0 && IsKeyPressed(KEY_E)) {
+    interactionSys.objects[idx].onInteract();
+}
+
+
