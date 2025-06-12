@@ -251,3 +251,5 @@ if (IsKeyPressed(KEY_SPACE)) {
 messageSys.AddMessage("¡Pulsa E para interactuar!", {screenWidth/2-80, screenHeight-100});
 messageSys.Update(GetFrameTime());
 messageSys.Draw();
+
+ApplyGravity(player.position, player.verticalSpeed);
