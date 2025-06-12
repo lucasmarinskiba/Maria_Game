@@ -242,3 +242,7 @@ float angle = MathHelper::AngleBetween(
 
 float distance = MathHelper::Distance(playerPos, enemyPos);
 
+// Por ejemplo al apretar una tecla:
+if (IsKeyPressed(KEY_SPACE)) {
+    combatSystem.PlayerAttack(player.position, 2.0f, 30.0f);
+}
