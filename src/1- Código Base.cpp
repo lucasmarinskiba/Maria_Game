@@ -76,6 +76,9 @@ int main() {
             // Lógica del milagro aquí
         }
 
+        // Declara e inicializa una instancia
+        ThirdPersonCamera tpcam;
+        
         // Dibujado
         BeginDrawing();
             ClearBackground(SKYBLUE);
