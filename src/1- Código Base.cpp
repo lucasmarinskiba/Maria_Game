@@ -79,7 +79,8 @@ int main() {
         // Dibujado
         BeginDrawing();
             ClearBackground(SKYBLUE);
-            BeginMode3D(camera);
+            tpcam.Update(player.position);
+            BeginMode3D(tpcam.GetCamera());
                 DrawModel(maria, playerPosition, 1.0f, WHITE);
                 DrawGrid(20, 1.0f); // Suelo
             EndMode3D();
