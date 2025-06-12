@@ -260,4 +260,10 @@ if (idx >= 0 && IsKeyPressed(KEY_E)) {
     interactionSys.objects[idx].onInteract();
 }
 
-
+PlayerData d = {player.position, player.health, player.faith};
+SaveGame("save.bin", d);
+// Para cargar:
+LoadGame("save.bin", d);
+player.position = d.position;
+player.health = d.health;
+player.faith = d.faith;
