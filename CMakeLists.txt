@@ -1,4 +1,4 @@
-// CMakeLists.txt
+# CMakeLists.txt
 cmake_minimum_required(VERSION 3.15)
 project(MariaGame VERSION 1.0 LANGUAGES CXX)
 
