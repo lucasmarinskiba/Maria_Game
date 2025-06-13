@@ -31,7 +31,6 @@ file(GLOB SOURCES
     "src/*.cpp"
     "src/core/*.cpp"
     "src/levels/*.cpp"
-    "src/utils/*.h"
 )
 
 file(GLOB HEADERS
@@ -40,17 +39,11 @@ file(GLOB HEADERS
     "src/core/*.h"
     "src/levels/*.h"
     "src/utils/*.h"
-    "src/utils/*.cpp"
-    "src/utils/*.c"
-    "src/utils/*.hpp"
-    "src/utils/*.cxx"
-    "src/utils/*.cpp"
-    "src/utils/*.c"
-    "src/utils/*.hxx"
-    "src/utils/*.h"
     "src/utils/*.hpp"
     "src/utils/*.hxx"
     "src/utils/*.cxx"
+    "src/utils/*.cpp"
+    "src/utils/*.c"
 )
 
 # 4. Ejecutable principal
@@ -79,13 +72,14 @@ if(WIN32)
     if(EXISTS ${RESOURCE_FILE})
         target_sources(maria_game PRIVATE ${RESOURCE_FILE})
     endif()
-    # Copiar DLLs necesarias
-    add_custom_command(TARGET maria_game POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy
-        "${raylib_LIBRARY_DIR}/raylib.dll"
-        "$<TARGET_FILE_DIR:maria_game>"
-    )
-
+    # Copiar DLLs necesarias (ajusta esta parte si usas vcpkg)
+    if(DEFINED raylib_LIBRARY_DIR AND EXISTS "${raylib_LIBRARY_DIR}/raylib.dll")
+        add_custom_command(TARGET maria_game POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy
+            "${raylib_LIBRARY_DIR}/raylib.dll"
+            "$<TARGET_FILE_DIR:maria_game>"
+        )
+    endif()
     # Icono del ejecutable (opcional)
     set_target_properties(maria_game PROPERTIES
         WIN32_EXECUTABLE ON
